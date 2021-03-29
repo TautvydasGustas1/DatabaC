@@ -5,4 +5,4 @@ RUN make
 CMD ["./databac", "use_env"]
 EXPOSE 8080
 ENV LISTEN_PORT=8080 FILE_DIR=./database
-RUN chmod -r database
+RUN chmod 777 -r database
