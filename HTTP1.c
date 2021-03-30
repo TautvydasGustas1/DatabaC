@@ -75,7 +75,7 @@ int http1_send_file(int socketfd, char* filepath) {
 		return -2;
 	}
 
-	char header[HEADER_MAX_LENGTH] = "HTTP/1.1 200 OK\nContent-Length: ";
+	char header[HEADER_MAX_LENGTH] = "HTTP/1.1 200 OK\nContent-Length: 0";
 	char buffer[20];
 	sprintf(buffer, "%ld", file_size);
 	strcat(header, buffer);
