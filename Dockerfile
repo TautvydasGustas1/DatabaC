@@ -6,7 +6,8 @@ RUN make
 RUN chgrp -R 0 /usr/src/myapp && \
     chmod -R g=u /usr/src/myapp
 CMD ["./databac", "use_env"]
-RUN chmod 775 /usr/src/myapp
+RUN chmod 777 /usr/src/myapp
+RUN chmod -R 777 /usr/src/myapp
 RUN chown -R 1001:0 /usr/src/myapp
 USER 1001
 EXPOSE 8080
