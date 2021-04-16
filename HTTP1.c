@@ -35,6 +35,7 @@ int is_http1(int socketfd) {
 }
 
 int http1_get_request_method(char* message) {
+	printf("METHOD message - ", message);
 	if(strncmp("GET", message, 3) == 0) {
 		return HTTP_GET_METHOD;
 	}
@@ -96,6 +97,7 @@ int http1_send_text(int socketfd, char* text, int status_code) {
 
 	koe0
 	*/
+	printf("TEXT - ", text);
 	int text_length = strlen(text);
 	char buffer[20];
 	char header[HEADER_MAX_LENGTH] = "HTTP/1.1 ";
