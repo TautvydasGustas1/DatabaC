@@ -39,6 +39,7 @@ void process_request(int socketfd, char* file_dir) {
 		free(url);
 
 		char* filepath = get_file_path(number, file_dir);
+		printf("METHOD ", method);
 		if(method == HTTP_GET_METHOD) {
 			if(access(filepath, F_OK) == 0 ) { //file exists
 				if(http1_send_file(socketfd, filepath) == -2) {
